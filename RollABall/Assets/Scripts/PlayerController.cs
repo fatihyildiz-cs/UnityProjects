@@ -30,9 +30,11 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    void OnTriggerEnter(Collider other){
+
+        if(other.gameObject.CompareTag("PickUp")){
+            
+            other.gameObject.SetActive(false);
+        }
+    }
 }
